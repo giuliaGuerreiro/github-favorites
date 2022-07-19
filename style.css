@@ -1,0 +1,158 @@
+:root {
+  font-size: 62.5%;
+
+  --ff-primary: 'Poppins', sans-serif;
+  --tc-primary: hsl(0, 3%, 20%);
+  --bc-input: rgb(var(--hue), 196, 196);
+  --hue: 194;
+  --hc-base: hsla(var(--hue), 100%, 63%, 0.808);
+
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  color: var(--tc-primary);
+  font-size: 1.4rem;
+  font-family: var(--ff-primary);
+}
+
+#app {
+  width: 50rem;
+  margin: 4rem auto 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search label {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.search input {
+  font-size: 1.3rem;
+  color: var(--bc-input);
+
+  padding: 1rem;
+  width: 18rem;
+  height: 3rem;
+  border: 1px solid var(--bc-input);
+  border-radius: .4rem 0 0 .4rem;
+}
+
+.search button {
+  background-color: var(--hc-base);
+  font-weight: bold;
+  
+  width: 3.3rem;
+  height: 3rem;
+
+  border: none;
+  border-radius: 0 .4rem .4rem 0;
+
+  cursor: pointer;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  margin-top: 3rem;
+  border-collapse: collapse;
+
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3);
+}
+
+table thead {
+  background-color: var(--hc-base);
+}
+
+thead th {
+  font-weight: normal;
+  text-align: left;
+  padding: 1rem;
+}
+
+thead th:first-child {
+  border-top-left-radius: .7rem;
+}
+
+thead th:last-child {
+  border-top-right-radius: .7rem;
+}
+
+tbody td {
+  padding: 1.5rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user a {
+  text-decoration: none;
+}
+
+.user a p {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+.user a span {
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
+tbody button {
+  color: red;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+tbody tr {
+  background-color: #eee;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #ddd;
+}
+
+tbody tr:last-child td:first-child {
+  border-bottom-left-radius: .7rem;
+}
+
+tbody tr:last-child td:last-child {
+  border-bottom-right-radius: .7rem;
+}
+
+.user img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
