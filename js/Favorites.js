@@ -25,14 +25,43 @@ export class Favorites {
   }
 
   async add(username) {
-    const user = await GithubUser.search(username)
-    this.entries = [user, ...this.entries]
-    this.update()
-    this.save()
+    
+    try {
+
+      const userExists = this.entries.find(user => username==user.login)
+      if(userExists) {
+        throw new Error('Usuário já existe')
+      }
+
+      const user = await GithubUser.search(username)
+
+      if(user.login === undefined) {
+        throw new Error('Usuário não existe')
+      }
+
+      this.entries = [user, ...this.entries]
+      this.update()
+      this.save()
+
+    } catch(error) {
+      alert(error.message)
+    }
   }
 
   save() {
     localStorage.setItem('@github-favorites:', JSON.stringify(this.entries))
+  }
+
+  delete(user) {
+    console.log(user)
+    const filteredUsers = this.entries.filter( entry => 
+      entry.login !== user.login)
+    console.log(filteredUsers)
+
+    this.entries = filteredUsers
+    this.update()
+    this.save()
+
   }
 }
 
@@ -60,6 +89,14 @@ export class FavoritesView extends Favorites {
       row.querySelector('.user a span').textContent = `${entry.login}`
       row.querySelector('.repositories').textContent = `${entry.public_repos}`
       row.querySelector('.followers').textContent = `${entry.followers}`
+
+      row.querySelector('.remove').onclick = () => {
+        const confirmDelete = confirm(`Tem certeza que quer excluir o usuário ${entry.name}`)
+        
+        if(confirmDelete) {
+          this.delete(entry)
+        }
+      }
 
       this.tbody.append(row)
     })
