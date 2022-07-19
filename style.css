@@ -48,7 +48,6 @@ header {
 
 .search input {
   font-size: 1.3rem;
-  color: var(--bc-input);
 
   padding: 1rem;
   width: 18rem;

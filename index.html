@@ -11,6 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script src="./js/main.js" type="module" defer></script>
 </head>
 <body>
   <div id="app">
@@ -19,7 +21,7 @@
       <div class="search">
         <label for="user-input">Usuário do Github</label>
         <input id="user-input" type="text" placeholder="Usuário do Github" />
-        <button>&plus;</button>
+        <button class="add-user">&plus;</button>
       </div>
     </header>
     <main>
@@ -32,37 +34,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td class="user">
-              <img src="https://github.com/giuliaGuerreiro.png" alt="Imagem de giuliaGuerreiro">
-              <a href="https://github.com/giuliaGuerreiro">
-                <p>Giulia Guerreiro</p>
-                <span>giuliaGuerreiro</span>
-              </a>
-            </td>
-            <td>30</td>
-            <td>200</td>
-            <td>
-              <button>&times;</button>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="user">
-              <img src="https://github.com/giuliaGuerreiro.png" alt="Imagem de giuliaGuerreiro">
-              <a href="https://github.com/giuliaGuerreiro">
-                <p>Giulia Guerreiro</p>
-                <span>giuliaGuerreiro</span>
-              </a>
-            </td>
-            <td>30</td>
-            <td>200</td>
-            <td>
-              <button>&times;</button>
-            </td>
-          </tr>
-        </tbody>
+        <tbody></tbody>
       </table>
     </main>
   </div>
