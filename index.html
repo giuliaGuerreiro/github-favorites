@@ -6,6 +6,43 @@
   <title>Github Favorites</title>
 </head>
 <body>
-  
+  <div id="app">
+    <header>
+      <h1>Github Favorites</h1>
+      <div class="search">
+        <label for="user-input">Usuário do Github</label>
+        <input id="user-input" type="text" placeholder="Usuário do Github" />
+        <button>&plus;</button>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Usuário</th>
+            <th>Repositorios</th>
+            <th>Seguidores</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="user">
+              <img src="https://github.com/giuliaGuerreiro.png" alt="Imagem de giuliaGuerreiro">
+              <a href="https://github.com/giuliaGuerreiro">
+                <p>Giulia Guerreiro</p>
+                <span>giuliaGuerreiro</span>
+              </a>
+            </td>
+            <td>30</td>
+            <td>200</td>
+            <td>
+              <button>&times;</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </div>
 </body>
 </html>
